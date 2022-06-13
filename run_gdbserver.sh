@@ -3,7 +3,7 @@ set -e
 DEVICE_PATH=/data/local/tmp/android-gdb/
 adb shell mkdir -p $DEVICE_PATH
 
-ANDROID_NDK=$HOME/Android/Sdk/ndk-bundle
+# ANDROID_NDK=$HOME/Android/Sdk/ndk-bundle
 
 GDBSERVER=${ANDROID_NDK}/prebuilt/android-arm64/gdbserver/gdbserver
 

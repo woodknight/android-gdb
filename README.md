@@ -2,18 +2,18 @@
 
 ## 1. Setup NDK environment variable in .bashrc
 ```bash
-export ANDROID_NDK=~/Android/Sdk/ndk-bundle
+export ANDROID_NDK=~/Android/Sdk/ndk-bundle (change this folder to yours)
 ```
 
 ## 2. Compile main.cpp with debugging option
 ```bash
-$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ -target aarch64-linux-android21 -g -O0 main.cpp
+bash build_android.sh
 ```
 
 ## 3. Create launch.json file
 Open main.cpp file. Click the create a launch.json file link in the Run and Debug view. Click "Add Configuration..." button in the bottom right, select "C/C++: (gdb) launch". Edit and add the following entries:
 ```json
-"program": "${workspaceFolder}/a.out",
+"program": "${workspaceFolder}/build_android/bin/main",
 "miDebuggerPath": "${env:ANDROID_NDK}/prebuilt/linux-x86_64/bin/gdb",
 "miDebuggerServerAddress": "localhost:5039",
 ```
